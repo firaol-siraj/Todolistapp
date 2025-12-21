@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <div class="todo-container">
+        <div class="todo-header">
+            <h1 class="todo-title">Todo List App</h1>
+            <p class="todo-description">“Manage your time, maximize your productivity.”</p>
+            <p class="header-border"></p>
+        </div>
+
+        <div class="todo-add">
+            <input type="text" class="todo-input" id="todo-inputs" placeholder="Add your tasks...">
+            <button class="todo-button" id="addBtn" onclick="addTodo()">Add Todo</button>
+        </div>
+
+        <div class="todo-detail">
+            <div class="detail-headers">
+                <p class="left-line"></p>
+                <h3 class="detail-header">Your Tasks</h3>
+                <p class="right-line"></p>
+            </div>
+
+            <div class="task-titles">
+                <h2 class="task-header">Task</h2>
+                <h2 class="task-header">Status</h2>
+                <h2 class="task-header">Remove</h2>
+            </div>
+
+            <div class="notask-yet">
+                <p>"No task add yet!"</p>
+            </div>
+
+            <div class="task-container">
+                <ul>
+                
+                </ul>
+            </div>
+
+            <p class="header-border"></p>
+            <div class="task-control">
+                <h3 class="count-task">Total Todos: 0</h3>
+                <h3 class="completed-task">Completed Todos: 0</h3>
+                <button class="clear-task">Clear All</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

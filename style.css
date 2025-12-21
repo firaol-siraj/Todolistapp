@@ -1,0 +1,406 @@
+
+*{
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo-container{
+    background-color: rgb(241, 244, 251);
+    width: 80%;
+    border-radius: 20px;
+    margin-block: 5rem;
+    box-shadow: 0 10px 10px rgb(191, 194, 199);
+}
+.todo-header{
+    text-align: center;
+}
+.todo-title{
+    font-size: 2.3rem;
+    font-weight: bold;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: -0.5px;
+    color: #1e293b;
+}
+.todo-description{
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #2d3542;
+    margin-top: -1rem;
+    word-spacing: 2px;
+    font-style: italic;
+}
+.header-border{
+    border: 1px solid gray;
+    margin-inline: 4rem;
+}
+.todo-add{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+.todo-input{
+    width: 70%;
+    padding: 0.9rem 2rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: #1e293b;
+    font-weight: normal;
+}
+.todo-button{
+    border-radius: 50px;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    font-size: 1rem;
+    color: #FFFFFF;
+    background-color: #4F46E5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.todo-button:active{
+    transform: scale(0.97);
+}
+.todo-button:hover{
+    color: #FFFFFF;
+    background-color: #4338CA;
+}
+.detail-headers{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+    margin-block: 0.5rem;
+}
+.left-line,.right-line{
+    flex-grow: 1;
+    height: 1px;
+    background-color: gray;
+    border: none;
+    margin-inline: 2rem;
+}
+.detail-header{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: -0.5px;
+    color: #1e293b;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+.task-titles{
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 4rem;
+    margin-top: -1.5rem;
+}
+.task-header{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: -0.5px;
+    color: #1e293b;
+}
+.tasks{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.notask-yet{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.task{
+    font-size: 1.2rem;
+    color: #101317;
+    font-weight: 500;
+    margin-inline: 1.6rem;
+}
+.task-complete,.task-remove{
+    padding: 0.25rem 1rem;
+    height: 50px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+.task-complete{
+    background-color: #10B981;
+    margin-right: 1.7rem;
+    transition: color 0.3s ease;
+}
+.task-complete:hover{
+    background-color: #22a87b;
+}
+.task-complete:active{
+    transform: scale(0.96);
+}
+.task-remove{
+    background-color: #EF4444;
+    margin-right: 4.7rem;
+    transition: color 0.3s ease;
+}
+.task-remove:hover{
+    background-color: #d25252;
+}
+.task-remove:active{
+    transform: scale(0.96);
+}
+.task-control{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+    margin-inline: 4rem;
+    margin-block: 2rem;
+}
+.count-task,
+.completed-task{
+    font-size: 1.3rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    text-align: center;
+}
+.clear-task{
+    padding: 0.25rem 1rem;
+    height: 50px;
+    font-size: 1.0rem;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    background-color: #EF4444;
+    transition: color 0.3s ease;
+}
+.clear-task:hover{
+    background-color: #d25252;
+}
+.clear-task:active{
+    transform: scale(0.96);
+}
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.edit-input{
+    width: 30%;
+    display: block;
+}
+
+
+@media(min-width: 1024px) and (max-width: 1200px){
+    .todo-container{
+        margin-block: 3.5rem;
+    }
+    .todo-description{
+        font-size: 0.9rem;
+    }
+    .task-header{
+        font-size: 1.3rem;
+    }
+    .todo-title{
+        font-size: 2.1rem;
+    }
+    .todo-add{
+        flex-direction: column;
+        gap: 2.7rem;
+        align-items: center;
+    }
+    .todo-input{
+        width: 80%;
+        padding: 1.9rem 2rem;
+    }
+    .notask-yet{
+        font-size: 1.4rem;
+    }
+    .count-task,
+    .completed-task{
+        font-size: 1rem;
+    }
+    .todo-button{
+        padding: 0.5rem 2.3rem;
+        font-size: 1rem;
+    }
+}
+@media(min-width: 768px) and (max-width: 1023px){
+    .todo-container{
+        margin-block: 2.5rem;
+    }
+    .todo-description{
+        font-size: 0.8rem;
+    }
+    .task-header{
+        font-size: 1.1rem;
+    }
+    .todo-title{
+        font-size: 2rem;
+    }
+    .todo-add{
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .todo-input{
+        width: 80%;
+        padding: 1.5rem 2rem;
+    }
+    .detail-header{
+        font-size: 1.5rem;
+    }
+    .todo-title{
+        font-size: 2.2rem;
+    }
+    .notask-yet{
+        font-size: 1.3rem;
+    }
+    .count-task,
+    .completed-task{
+        font-size: 0.9rem;
+    }
+    .todo-button{
+        padding: 0.5rem 2.2rem;
+        font-size: 0.9rem;
+    }
+}
+@media(min-width: 480px) and (max-width: 767px){
+    .todo-container{
+        margin-block: 2.2rem;
+    }
+    .task-header{
+        font-size: 0.9rem;
+    }
+    .todo-description{
+        font-size: 0.7rem;
+    }
+    .todo-title{
+        font-size: 1.8rem;
+    }
+    .todo-add{
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .todo-input{
+        width: 80%;
+        padding: 1.5rem 2rem;
+    }
+    .task-complete,.task-remove{
+        padding: 0.15rem 0.8rem;
+        height: 40px;
+        font-size: 0.7rem;
+   }
+   .clear-task{
+        padding: 0.15rem 0.8rem;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+    .detail-header{
+        font-size: 1.3rem;
+    }
+    .todo-title{
+        font-size: 2.0rem;
+    }
+    .notask-yet{
+        font-size: 1.2rem;
+    }
+    .count-task,
+    .completed-task{
+        font-size: 0.8rem;
+    }
+    .todo-button{
+        padding: 0.5rem 2.0rem;
+        font-size: 0.8rem;
+    }
+}
+@media(max-width: 487px){
+    .todo-container{
+        margin-block: 2rem;
+    }
+    .todo-description{
+        font-size: 0.6rem;
+    }
+    .task-header{
+        font-size: 0.8rem;
+    }
+    .todo-title{
+        font-size: 1.5rem;
+    }
+    .todo-add{
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .todo-input{
+        width: 80%;
+        padding: 1.5rem 2rem;
+    }
+    .task-titles{
+        display: none;
+    }
+    .tasks{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.3rem;
+        text-align: start;
+        margin-right: 3rem;
+    }
+    .task-complete,.task-remove{
+        padding: 0.11rem 0.5rem;
+        height: 40px;
+        font-size: 0.7rem;
+        margin-left: 2.5rem;
+   }
+   .task-remove{
+        margin-left: 5.5rem !important;
+        margin-top: 1rem;
+   }
+   .clear-task{
+        padding: 0.13rem 0.7rem;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+    .task-control{
+        flex-direction: column;
+    }
+    .detail-header{
+        font-size: 1rem;
+    }
+    .todo-title{
+        font-size: 1.8rem;
+    }
+    .notask-yet{
+        font-size: 1rem;
+    }
+    .count-task,
+    .completed-task{
+        font-size: 0.7rem;
+    }
+    .todo-button{
+        padding: 0.5rem 2.0rem;
+        font-size: 0.7rem;
+    }
+    .task-edit{
+      text-align: center;
+      margin-left: 2.3rem;
+   }
+   .task-left{
+    display: block;
+     margin-bottom: 1rem;
+   }
+}
